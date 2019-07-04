@@ -21,7 +21,7 @@ fs.readFile('./text.txt', 'utf-8', function (err, data) {
 fs.readdir('.', function saveFile(err, files) {
     if (err) throw err;
     console.log('My new file');
-    fs.writeFile('./newindex.js', './newtext.txt', files, function (err) {
+    fs.writeFile('./newtext.txt', files, function (err) {
         if (err) throw err;
         console.log('File has been saved');
     });
