@@ -9,7 +9,7 @@ fs.stat('./cat.jpg', function (err, stats) {
 fs.readFile('./text.txt', 'utf-8', function (err, data) {
     console.log('Data before saving!'.blue);
     console.log(data);
-    fs.appendFile('./text.txt', 'And that is their look after the record!', function (err) {
+    fs.appendFile('./text.txt', '\n And that is their look after the record!', function (err) {
         if (err) throw err;
         console.log('Saved!'.blue);
         fs.readFile('./text.txt', 'utf-8', function (err, data) {
@@ -20,8 +20,9 @@ fs.readFile('./text.txt', 'utf-8', function (err, data) {
 });
 fs.readdir('.', function saveFile(err, files) {
     if (err) throw err;
-    console.log('My new file');
-    fs.writeFile('./newtext.txt', files, function (err) {
+    console.log('My new file \n');
+    fs.writeFile('./newtext.txt', files.join('\n'),
+      function (err) {
         if (err) throw err;
         console.log('File has been saved');
     });
